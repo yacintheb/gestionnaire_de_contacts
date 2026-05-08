@@ -2,7 +2,7 @@
 from afficher_contacts import afficher_contact
 from ajout_contact import ajouter_contact
 from supprimer_contact import supprimer_contact
-from rechercher_contact import rechercher_contact
+from rechercher_contact import rechercher_un_contact
 
 contacts = [] ## On crée la liste
 
@@ -10,7 +10,6 @@ contacts = [] ## On crée la liste
 print ("======== gestionnaire de contacts========")
 print ("Appuyez sur:\n1 pour afficher les contacts\n2 pour ajouter un contact\n3 pour supprimer un contact\n4 pour rechercher un contact\n5 pour quitter le programme")
 
-choix = input("Votre choix")
 while True: # 2. Boucle infinie pour afficher le menu tant qu'on ne quitte pas
     
     choix = int(input(" votre choix ?: ")) # 3. On demande le choix à l'utilisateur

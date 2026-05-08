@@ -1,9 +1,9 @@
 ## Demander à l'utilisateur le nom, le numéro et l'adresse mail
 
 def ajouter_contact (contacts):
-    nom = input ("Entrez le nom")
-    telephone = int (input("Entrez le numéro"))
-    email = input ("Entrez l'adresse mail")
+    nom = input ("Entrez le nom:")
+    telephone = int (input("Entrez le numéro:"))
+    email = input ("Entrez l'adresse mail:")
 ## les sauvegarder dans un dictionnaire
     contact = {
         "nom": nom,
