@@ -1,3 +1,4 @@
+## on crée la fonction
 def rechercher_un_contact (contacts):
     contact_trouve = False
     nom2 = input("Entrez le nom du contact que vous cherchez:")
