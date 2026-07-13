@@ -2,7 +2,7 @@
 
 def ajouter_contact (contacts):
     nom = input ("Entrez le nom:")
-    telephone = int (input("Entrez le numéro:"))
+    telephone = input("Entrez le numéro : ").strip()
     email = input ("Entrez l'adresse mail:")
 ## les sauvegarder dans un dictionnaire
     contact = {
