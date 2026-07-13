@@ -1,19 +1,31 @@
-## on crée la fonction
+# Create the function
 def rechercher_un_contact (contacts):
     contact_trouve = False
-    nom2 = input("Entrez le nom du contact que vous cherchez:")
-    with open("contacts.txt", "r") as f:
-        lignes = f.readlines()
-        for ligne in lignes:
-        # On sépare la ligne par la virgule et on prend le premier élément [0]
-            nom_dans_fichier = ligne.split(",")[0]
-        # On compare exactement le nom (en enlevant les espaces inutiles)          
-            if nom_dans_fichier == nom2:
-                contact_trouve = True
-                nom = ligne.split(",")[0]
-                telephone = ligne.split(",")[1]
-                email = ligne.split(",")[2]
-                print(f" Les détails du contact. nom:{nom}, téléphone:{telephone}, email:{email}" )  
-    if not  contact_trouve: ## si on ne trouve pas le contact, 
-                            ## on sort de la boucle pour afficher une seule fois l'erreur
+    nom2 = input("Entrez le nom du contact que vous cherchez : ").strip()
+
+    if not nom2:
+        print("Vous devez saisir un nom.")
+        return
+
+    try:
+        with open("contacts.txt", "r", encoding="utf-8") as f:
+            lignes = f.readlines()
+    except FileNotFoundError:
+        print("Vous n'avez pas de contacts enregistrés.")
+        return
+
+    for ligne in lignes:
+        informations = ligne.strip().split(",")
+
+        # A valid line must contain a name, a phone number, and an email address.
+        if len(informations) != 3:
+            continue
+
+        nom, telephone, email = informations
+
+        if nom.strip().lower() == nom2.lower():
+            contact_trouve = True
+            print(f"Nom : {nom}, téléphone : {telephone}, email : {email}")
+
+    if not contact_trouve:
         print(f"Erreur : Aucun contact au nom de '{nom2}' n'a été trouvé.")
