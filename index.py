@@ -1,16 +1,16 @@
-## On importe les fonctions
+# Import the functions
 from afficher_contacts import afficher_contact
 from ajout_contact import ajouter_contact
 from supprimer_contact import supprimer_contact
 from rechercher_contact import rechercher_un_contact
 
-contacts = [] ## On crée la liste
+contacts = []  # Create the list
 
-## afficher le menu à l'utilisateur
+# Display the menu to the user
 print ("======== gestionnaire de contacts========")
 print ("Appuyez sur:\n1 pour afficher les contacts\n2 pour ajouter un contact\n3 pour supprimer un contact\n4 pour rechercher un contact\n5 pour quitter le programme")
 
-while True: # 2. Boucle infinie pour afficher le menu tant qu'on ne quitte pas
+while True:  # Keep displaying the menu until the user quits
 
     try:
         choix = int(input("Votre choix : "))
@@ -19,7 +19,7 @@ while True: # 2. Boucle infinie pour afficher le menu tant qu'on ne quitte pas
         continue
 
     if choix == 1:
-        afficher_contact(contacts) # On appelle la fonction
+        afficher_contact(contacts)  # Call the function
     elif choix == 2:
         ajouter_contact(contacts)
     elif choix == 3:
@@ -28,6 +28,6 @@ while True: # 2. Boucle infinie pour afficher le menu tant qu'on ne quitte pas
         rechercher_un_contact(contacts)
     elif choix == 5:
         print("Vous avez quitté le programme")
-        break # Arrête la boucle while
+        break  # Stop the while loop
     else:
         print("Votre choix n'est pas valable, réessayez.")
