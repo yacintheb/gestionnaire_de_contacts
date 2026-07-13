@@ -12,7 +12,11 @@ print ("Appuyez sur:\n1 pour afficher les contacts\n2 pour ajouter un contact\n3
 
 while True: # 2. Boucle infinie pour afficher le menu tant qu'on ne quitte pas
     
-    choix = int(input(" votre choix ?: ")) # 3. On demande le choix à l'utilisateur
+   try:
+        choix = int(input("Votre choix : "))
+    except ValueError:
+        print("Veuillez saisir un nombre entre 1 et 5.")
+        continue
 
     if choix == 1:
         afficher_contact(contacts) # On appelle la fonction
