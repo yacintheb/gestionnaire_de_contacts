@@ -2,7 +2,7 @@
 from afficher_contacts import afficher_contact
 from ajout_contact import ajouter_contact
 from supprimer_contact import supprimer_contact
-from rechercher_contact import rechercher_un_contact
+from rechercher_un_contact import rechercher_un_contact
 
 contacts = [] ## On crée la liste
 
